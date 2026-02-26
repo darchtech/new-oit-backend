@@ -19,7 +19,6 @@ const videoReviewRoutes = require("./routes/VideoReviews.routes");
 const app = express();
 
 // ✅ Enable CORS for frontend
-app.use(cors());
 
 // ✅ Parse JSON and URL-encoded payloads
 app.use(express.json({ limit: "50mb" }));
