@@ -20,7 +20,6 @@ const videoReviewRoutes = require("./routes/VideoReviews.routes");
 const app = express();
 
 // ✅ Enable CORS for frontend
-app.use(cors());
 // ✅ HTTP request logging
 app.use(morgan("dev"));
 
