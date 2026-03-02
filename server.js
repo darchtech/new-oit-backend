@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -19,6 +20,9 @@ const videoReviewRoutes = require("./routes/VideoReviews.routes");
 const app = express();
 
 // ✅ Enable CORS for frontend
+app.use(cors());
+// ✅ HTTP request logging
+app.use(morgan("dev"));
 
 // ✅ Parse JSON and URL-encoded payloads
 app.use(express.json({ limit: "50mb" }));
@@ -55,5 +59,3 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`🔥 Server running at http://localhost:${PORT}`);
 });
-
-
