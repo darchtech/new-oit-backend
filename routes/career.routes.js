@@ -45,6 +45,7 @@ router.delete("/:id", adminAuth, async (req, res) => {
 
 router.get("/public", async (req, res) => {
   const domain = req.headers.domain;
+  console.log("Domain:", domain);
   if (!domain) return res.json({ success: true, data: [] });
 
   const jobs = await Career.find({ domain, isHiring: true }).sort({ createdAt: -1 });
